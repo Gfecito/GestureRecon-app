@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OAYE vfx</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+<h1> AI Launch Lab </h1>
+<h2> OAYE VFX: making visuals from gestures</h2>
+<main>
+    <form class="box" method="POST" action="{{ url_for('predict') }}" enctype="multipart/form-data">
+        <div class="box__input">
+            <input type="file" name="image_file" accept="image/*">
+            <label for="image_file"><strong>Choose a PNG file</strong></label><br>
+            <button class="box__button" name="uploader" type="submit" value="Submit">Upload</button>
+        </div>
+    </form>
+    <header>{{ gesture }} detected with <span>{{ certainty }}</span> certainty</header>
+    <div class="theater">
+        <div class="C" style="animation-name: C{{ animation }}"></div>
+        <div class="L" style="animation-name: L{{ animation }}"></div>
+        <div class="hand" style="animation-name: hand{{ animation }}">
+            <div class="fingers">
+                <div class="finger" style="animation-name: fingers{{ animation }}"></div>
+                <div class="fingerSpacing" style="animation-name: fingers{{ animation }}"></div>
+                <div class="finger" style="animation-name: fingers{{ animation }}"></div>
+                <div class="fingerSpacing" style="animation-name: fingers{{ animation }}"></div>
+                <div class="finger" style="animation-name: fingers{{ animation }}"></div>
+                <div class="fingerSpacing" style="animation-name: fingers{{ animation }}"></div>
+                <div class="finger" style="animation-name: fingers{{ animation }}"></div>
+                <div class="fingerSpacing" style="animation-name: fingers{{ animation }}"></div>
+                <div class="thumb" style="animation-name: thumb{{ animation }}"></div>
+            </div>
+            <div class="palmHand"></div>
+        </div>
+    </div>
+</main>
+</body>
+
+</html>
